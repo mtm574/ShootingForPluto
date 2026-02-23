@@ -1,0 +1,4 @@
+repository "Shooting For Pluto!/Shooting For Pluto!@2475681982432@cloud"
+  path "/"
+    br "/main"
+    co "/main"
