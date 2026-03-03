@@ -8,9 +8,20 @@ public class Laser : MonoBehaviour
     {
         GetComponent<Rigidbody2D>().linearVelocity = Vector2.up * speed;
     }
+
+    // Destroy the laser when it goes off-screen
+    void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
     
     void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(gameObject);
+        // did we hit an enemy?
+        if (other.CompareTag("Enemy"))
+        {
+            Destroy(gameObject); // destroy laser
+            Destroy(other.gameObject); // destroy enemy
+        }
     }
 }
