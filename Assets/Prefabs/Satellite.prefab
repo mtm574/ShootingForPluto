@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7103858129287093452}
   - component: {fileID: 8263687128508259306}
   m_Layer: 0
-  m_Name: SFPSate_0
+  m_Name: Satellite
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,6 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SatelliteEnemy
   health: 1
+  crystalPrefab: {fileID: 5417925748758141310, guid: 9336d83a3e07337429bbc336e0b4c455, type: 3}
 --- !u!61 &-2929083074770479055
 BoxCollider2D:
   m_ObjectHideFlags: 0
