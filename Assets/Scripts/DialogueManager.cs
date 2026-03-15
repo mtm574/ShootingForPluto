@@ -7,6 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
+
+    [Header("Cutscene Settings")]
+    public string sceneToLoadAfterCutscene; 
+
     [Header("UI")]
     public TextMeshProUGUI dialogueText;      
 
@@ -100,6 +104,16 @@ public class DialogueManager : MonoBehaviour
 
         Debug.Log("Dialogue finished. Start gameplay here.");
 
-     
+
+        if (!string.IsNullOrEmpty(sceneToLoadAfterCutscene))
+        {
+            Debug.Log("Dialogue finished. Loading scene: " + sceneToLoadAfterCutscene);
+            SceneManager.LoadScene(sceneToLoadAfterCutscene);
+        }
+        else
+        {
+            Debug.Log("Dialogue finished. No scene change.");
+        }
+
     }
 }
