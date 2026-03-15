@@ -134,6 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Laser
   speed: 10
+  explosionEffect: {fileID: 7159001947224115517, guid: d0f09857322300247943f2b8651f369b, type: 3}
 --- !u!61 &-1273006257911748644
 BoxCollider2D:
   m_ObjectHideFlags: 0

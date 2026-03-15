@@ -3,6 +3,7 @@ using UnityEngine;
 public class Laser : MonoBehaviour
 {
     [SerializeField] float speed = 10f;
+    public GameObject explosionEffect; // reference to the explosion effect prefab
     
     void Start()
     {
@@ -22,6 +23,9 @@ public class Laser : MonoBehaviour
         {
             Destroy(gameObject); // destroy laser
             Destroy(other.gameObject); // destroy enemy
+
+            // Instantiate the explosion effect at the player's position
+            Instantiate(explosionEffect, transform.position, Quaternion.identity);
         }
     }
 }
