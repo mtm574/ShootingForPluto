@@ -100,6 +100,6 @@ public class DialogueManager : MonoBehaviour
 
         Debug.Log("Dialogue finished. Start gameplay here.");
 
-        SceneManager.LoadScene("ShootingForPluto");
+     
     }
 }
