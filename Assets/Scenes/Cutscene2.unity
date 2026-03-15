@@ -250,6 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e254c6fc0fe8ee418d970906bb95ffd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
+  sceneToLoadAfterCutscene: 
   dialogueText: {fileID: 2055270751}
   playerSprite: {fileID: 0}
   npcSprite: {fileID: 0}
