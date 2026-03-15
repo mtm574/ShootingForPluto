@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public int health = 1; // default health for an enemy
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,4 +21,19 @@ public class Enemy : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+     // Method for taking damage
+    public virtual void TakeDamage(int damage)
+    {
+        health -= damage;
+        if (health <= 0)
+            Die();
+    }
+
+    // Destroy enemy
+    protected virtual void Die()
+    {
+        Destroy(gameObject);
+    }
+
 }

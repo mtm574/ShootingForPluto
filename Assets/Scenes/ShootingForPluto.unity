@@ -760,6 +760,7 @@ MonoBehaviour:
   - {fileID: 99593687}
   - {fileID: 313289332}
   - {fileID: 663287698}
+  explosionEffect: {fileID: 7159001947224115517, guid: d0f09857322300247943f2b8651f369b, type: 3}
 --- !u!1 &867613748
 GameObject:
   m_ObjectHideFlags: 0
