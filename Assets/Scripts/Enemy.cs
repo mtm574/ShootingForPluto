@@ -2,6 +2,13 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    AudioManager audioManager;
+
+    private void Awake() // Calls the audio manager
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     public int health = 1; // default health for an enemy
     public GameObject crystalPrefab; // reference to the crystal prefab to drop on death
 
@@ -35,6 +42,7 @@ public class Enemy : MonoBehaviour
     protected virtual void Die()
     {
         Destroy(gameObject);
+        audioManager.PlaySFX(audioManager.enemyDestoryed); //Calls audio for enemy destroyed
         
         // drop crystal
         Instantiate(crystalPrefab, transform.position, Quaternion.identity);

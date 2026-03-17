@@ -4,6 +4,12 @@ using UnityEngine.UI;
 
 public class PlayerLives : MonoBehaviour
 {
+    AudioManager audioManager;
+
+    private void Awake() // Calls the audio manager
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     public int lives = 3; // starting lives
     public Image[] livesUI; // reference to the UI element that displays lives
@@ -52,6 +58,7 @@ public class PlayerLives : MonoBehaviour
             {
                 Debug.Log("Game Over!");
                 Destroy(gameObject); // Destroy the player object 
+                audioManager.PlaySFX(audioManager.playerDeath); //Calls audio for player death
             }
         }
     }

@@ -2,6 +2,12 @@ using UnityEngine;
 
 public class NewMonoBehaviourScript : MonoBehaviour
 {
+    AudioManager audioManager;
+
+    private void Awake() // Calls the audio manager
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     // Player Stats (This would technically be the ship... not sure how to separate from combat stats yet)
     public int health;
     public int firerate;
@@ -15,6 +21,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         {
             // destroy the crystal object
             Destroy(other.gameObject);
+            audioManager.PlaySFX(audioManager.prismPickup); //Calls audio for cystal collect
 
             // upgrade player stats here 
             health += 1;
