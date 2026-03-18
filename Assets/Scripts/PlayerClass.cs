@@ -6,7 +6,15 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     private void Awake() // Calls the audio manager
     {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        GameObject audioObj = GameObject.FindGameObjectWithTag("Audio");
+        if (audioObj != null)
+        {
+            audioManager = audioObj.GetComponent<AudioManager>();
+        }
+        else
+        {
+            audioManager = null;
+        }
     }
     // Player Stats (This would technically be the ship... not sure how to separate from combat stats yet)
     public int health;
@@ -21,14 +29,15 @@ public class NewMonoBehaviourScript : MonoBehaviour
         {
             // destroy the crystal object
             Destroy(other.gameObject);
-            audioManager.PlaySFX(audioManager.prismPickup); //Calls audio for cystal collect
-
+            if (audioManager != null && audioManager.prismPickup != null)
+            {
+                audioManager.PlaySFX(audioManager.prismPickup); //Calls audio for cystal collect
+            }
             // upgrade player stats here 
             health += 1;
             firerate += 1;
             laserDamage += 1;
             speed += 1;
-
             Debug.Log("Player collected a crystal! Stats upgraded.");
         }
     }
