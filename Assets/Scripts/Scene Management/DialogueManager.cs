@@ -30,8 +30,8 @@ public class DialogueManager : MonoBehaviour
 
     void Start()
     {
-        playerSprite.SetActive(false);
-        npcSprite.SetActive(false);
+        //playerSprite.SetActive(false);
+        //npcSprite.SetActive(false);
 
         ShowLine();
     }

@@ -1,11 +1,12 @@
+
 using UnityEngine;
 
 public class CrystalPickup : MonoBehaviour
 {
   [Header("Crystal Type")]
   public string crystalType = "blue_crystal";
-  public string crystalType = "green_crystal";
-  public string crystalType = "yellow_crystal";
+  // public string crystalType = "green_crystal";
+  // public string crystalType = "yellow_crystal";
 
   [Header("Attraction Settings")]
   public float attractionRange = 5f;
@@ -17,7 +18,7 @@ public class CrystalPickup : MonoBehaviour
   {
     GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
     if (playerObj != null)
-        player = playerObj.transform;
+      player = playerObj.transform;
   }
   void Update()
   {
@@ -37,4 +38,11 @@ public class CrystalPickup : MonoBehaviour
       Destroy(gameObject);
     }
   }
+}
+
+// Minimal stub to prevent errors if PlayerUpgrades is missing
+public class PlayerUpgrades
+{
+  public static PlayerUpgrades Instance = new PlayerUpgrades();
+  public bool crystalMagnet = false;
 }
