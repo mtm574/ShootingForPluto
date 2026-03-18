@@ -82,7 +82,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: 8022866174986626649, guid: 61c8e3391329345498f9e2859ea5d44c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -135,6 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Laser
   speed: 10
   explosionEffect: {fileID: 7159001947224115517, guid: d0f09857322300247943f2b8651f369b, type: 3}
+  damage: 1
 --- !u!61 &-1273006257911748644
 BoxCollider2D:
   m_ObjectHideFlags: 0
