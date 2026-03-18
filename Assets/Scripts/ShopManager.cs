@@ -28,3 +28,5 @@ public class ShopManager : MonoBehaviour
   void GrantItem(ShopItem item)
   {
     Debug.Log(item.itemName + " added to inventory");
+  }
+}
