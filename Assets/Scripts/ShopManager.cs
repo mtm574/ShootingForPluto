@@ -25,8 +25,31 @@ public class ShopManager : MonoBehaviour
       Debug.Log("Not enough " + item.currencyType);
     }
   }
+  
   void GrantItem(ShopItem item)
   {
     Debug.Log(item.itemName + " added to inventory");
+
+    if (item.itemName == "Health Up")
+    {
+        PlayerLives playerLives = FindObjectOfType<PlayerLives>();
+        if (playerLives != null)
+        {
+            playerLives.lives += 1; // add 1 life
+
+            // Update UI
+            for (int i = 0; i < playerLives.livesUI.Length; i++)
+            {
+                if (i < playerLives.lives)
+                    playerLives.livesUI[i].enabled = true;
+                else
+                    playerLives.livesUI[i].enabled = false;
+            }
+
+            Debug.Log("Lives increased! Now: " + playerLives.lives);
+        }
+    }
+
+    // Add other items here later
   }
 }
