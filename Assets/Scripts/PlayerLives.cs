@@ -1,6 +1,7 @@
 using System.Reflection;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerLives : MonoBehaviour
 {
@@ -37,6 +38,9 @@ public class PlayerLives : MonoBehaviour
             // Instantiate the explosion effect at the player's position
             Instantiate(explosionEffect, transform.position, Quaternion.identity);
 
+            // play player getting hit sound everytime (rn just playerdeath)
+            audioManager.PlaySFX(audioManager.playerDeath);
+
             // Handle player losing a life here
             Debug.Log("Player hit by enemy! Lose a life.");
             lives--;
@@ -54,11 +58,15 @@ public class PlayerLives : MonoBehaviour
                 }
             }
 
+            // what happens when PLAYER DIES
             if (lives <= 0)
             {
                 Debug.Log("Game Over!");
                 Destroy(gameObject); // Destroy the player object 
-                audioManager.PlaySFX(audioManager.playerDeath); //Calls audio for player death
+                //audioManager.PlaySFX(audioManager.playerDeath); //Calls audio for player death
+                
+                // go to main menu
+                SceneManager.LoadScene("MainMenu");
             }
         }
     }
