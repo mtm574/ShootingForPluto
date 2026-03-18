@@ -6,15 +6,7 @@ public class Enemy : MonoBehaviour
 
     private void Awake() // Calls the audio manager
     {
-        GameObject audioObj = GameObject.FindGameObjectWithTag("Audio");
-        if (audioObj != null)
-        {
-            audioManager = audioObj.GetComponent<AudioManager>();
-        }
-        else
-        {
-            audioManager = null;
-        }
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     public int health = 1; // default health for an enemy
@@ -50,10 +42,8 @@ public class Enemy : MonoBehaviour
     protected virtual void Die()
     {
         Destroy(gameObject);
-        if (audioManager != null && audioManager.enemyDestoryed != null)
-        {
-            audioManager.PlaySFX(audioManager.enemyDestoryed); //Calls audio for enemy destroyed
-        }
+        audioManager.PlaySFX(audioManager.enemyDestoryed); //Calls audio for enemy destroyed
+        
         // drop crystal
         Instantiate(crystalPrefab, transform.position, Quaternion.identity);
     }

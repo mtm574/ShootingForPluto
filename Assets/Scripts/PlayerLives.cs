@@ -8,15 +8,7 @@ public class PlayerLives : MonoBehaviour
 
     private void Awake() // Calls the audio manager
     {
-        GameObject audioObj = GameObject.FindGameObjectWithTag("Audio");
-        if (audioObj != null)
-        {
-            audioManager = audioObj.GetComponent<AudioManager>();
-        }
-        else
-        {
-            audioManager = null;
-        }
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     public int lives = 3; // starting lives
