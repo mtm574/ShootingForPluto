@@ -48,9 +48,10 @@ GameObject:
   - component: {fileID: 4454015677359398972}
   - component: {fileID: 6604846133546306570}
   - component: {fileID: -6743201656768467628}
+  - component: {fileID: 4622998822467176903}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -294,3 +295,16 @@ MonoBehaviour:
   firerate: 0
   laserDamage: 0
   speed: 0
+--- !u!114 &4622998822467176903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6229836757931972512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46f5fc3dc513d234985195e30c2384ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInventory
+  crystals: 0
